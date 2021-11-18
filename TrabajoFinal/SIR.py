@@ -40,9 +40,9 @@ def plot_with_death_rate(S, I, R, t, divide_by=479853, death_rate=1.5):
     fig, ax = plt.subplots()
     ax.plot(t, S / divide_by, 'b', alpha=0.5, lw=2, label='Susceptible a ser infectado')
     ax.plot(t, I / divide_by, 'r', alpha=0.5, lw=2, label='Infectado Base')
-    RR = R * (1 - death_rate)
+    RR = R * (0.95)
     DD = R - RR
-    ax.plot(t, RR / divide_by, 'g', alpha=0.5, lw=2, label='Recuperado con inmunidad')
+    ax.plot(t, R / divide_by, 'g', alpha=0.5, lw=2, label='Recuperado con inmunidad')
     ax.plot(t, DD / divide_by, 'k', alpha=0.5, lw=2, label='Infectados por contacto')
     ax.set_xlabel('Tiempo /días')
     ax.set_ylabel(f'Número (dividido por {divide_by:,})')
